@@ -16,6 +16,10 @@ app.get('/facebookID', (req, res) => {
   let highscore = req.query.highscore;
   let ownerId = req.query.owner;
 
+
+  if (highscore === undefined) {
+    highscore = "0";
+  }
   let personalPic;
   const promises = [];
 
