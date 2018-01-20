@@ -39,7 +39,7 @@ app.get('/facebookID', (req, res) => {
         friend.profilePic = fbPics[i];
       })
       // console.log(friends)
-      database.fbFriends.child(user.id).set({
+      database.fbFriends.child(ownerId).set({
         name: name,
         friends: [friends],
         highscore: highscore,
