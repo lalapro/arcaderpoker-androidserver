@@ -15,6 +15,7 @@ app.get('/facebookID', (req, res) => {
   let blitzWins = req.query.blitzWins;
   let highscore = req.query.highscore;
   let ownerId = req.query.owner;
+  let name = req.query.name;
 
 
   if (highscore === undefined) {
@@ -38,8 +39,8 @@ app.get('/facebookID', (req, res) => {
         friend.profilePic = fbPics[i];
       })
       // console.log(friends)
-      database.fbFriends.child('test').set({
-        name: 'test',
+      database.fbFriends.child(user.id).set({
+        name: name,
         friends: [friends],
         highscore: highscore,
         deviceId: deviceId,
