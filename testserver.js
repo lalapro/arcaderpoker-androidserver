@@ -18,7 +18,6 @@ app.post('/facebookID', (req, res) => {
   let ownerId = req.body.owner;
   let name = req.body.name;
 
-  console.log(friends)
 
 
   if (highscore === undefined) {
@@ -39,10 +38,10 @@ app.post('/facebookID', (req, res) => {
     if (personalPic === undefined) personalPic = 'undefined'
     Promise.all(promises).then(fbPics => {
       friends.forEach((friend, i) => {
-        console.log('fbpiccccs', fbPics)
+        // console.log('fbpiccccs', fbPics)
         friend.profilePic = fbPics[i];
       })
-      console.log('friends', friends)
+      // console.log('friends', friends)
       database.fbFriends.child(ownerId).set({
         name: name,
         friends: [friends],
