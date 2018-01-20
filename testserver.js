@@ -10,8 +10,18 @@ app.set('port', process.env.PORT);
 app.get('/facebookID', (req, res) => {
 
   let friends = req.query.friends;
+  let deviceId = req.query.deviceId;
+  let duelWins = req.query.duelWins;
+  let blitzWins = req.query.blitzWins;
+  let highscore = req.query.highscore;
+  let user.id = req.query.owner;
 
+  let personalPic;
   const promises = [];
+
+  getFBPics(user.id).then(pic => {
+    personalPic = pic
+  })
 
   friends.forEach((friend, i) => {
     // console.log(friend.id)
