@@ -7,15 +7,16 @@ const getFBPics = require('./getFBPics.js');
 
 app.set('port', process.env.PORT);
 
-app.get('/facebookID', (req, res) => {
-
-  let friends = JSON.parse(req.query.friends);
+app.post('/facebookID', (req, res) => {
+  let friends = req.query.friends;
   let deviceId = req.query.deviceId;
   let duelWins = req.query.duelWins;
   let blitzWins = req.query.blitzWins;
   let highscore = req.query.highscore;
   let ownerId = req.query.owner;
   let name = req.query.name;
+
+  console.log(friends)
 
 
   if (highscore === undefined) {
