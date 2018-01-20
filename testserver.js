@@ -26,29 +26,32 @@ app.get('/facebookID', (req, res) => {
   getFBPics(ownerId).then(pic => {
     personalPic = pic
   })
-
-  friends.forEach((friend, i) => {
-    // console.log(friend.id)
-    promises.push(getFBPics(friend.id))
-  })
-
-  Promise.all(promises).then(fbPics => {
+  .then(x => {
     friends.forEach((friend, i) => {
-      friend.profilePic = fbPics[i];
-    })
-    // console.log(friends)
-    database.fbFriends.child('test').set({
-      name: 'test',
-      friends: [friends],
-      highscore: highscore,
-      deviceId: deviceId,
-      fbPic: personalPic,
-      duelWins: duelWins,
-      blitzWins: blitzWins
+      // console.log(friend.id)
+      promises.push(getFBPics(friend.id))
     })
 
-  }).then(x => {
-    res.send();
+    if (personalPic === undefined) personalPic = 'undefined'
+    Promise.all(promises).then(fbPics => {
+      friends.forEach((friend, i) => {
+        friend.profilePic = fbPics[i];
+      })
+      // console.log(friends)
+      database.fbFriends.child('test').set({
+        name: 'test',
+        friends: [friends],
+        highscore: highscore,
+        deviceId: deviceId,
+        fbPic: personalPic,
+        duelWins: duelWins,
+        blitzWins: blitzWins
+      })
+
+    }).then(y => {
+      res.send();
+    })
+
   })
 
 
