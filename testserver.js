@@ -36,9 +36,10 @@ app.get('/facebookID', (req, res) => {
     if (personalPic === undefined) personalPic = 'undefined'
     Promise.all(promises).then(fbPics => {
       friends.forEach((friend, i) => {
+        console.log('fbpiccccs', fbPics)
         friend.profilePic = fbPics[i];
       })
-      // console.log(friends)
+      console.log('friends', friends)
       database.fbFriends.child(ownerId).set({
         name: name,
         friends: [friends],
