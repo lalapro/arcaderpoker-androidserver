@@ -14,12 +14,12 @@ app.get('/facebookID', (req, res) => {
   let duelWins = req.query.duelWins;
   let blitzWins = req.query.blitzWins;
   let highscore = req.query.highscore;
-  let user.id = req.query.owner;
+  let ownerId = req.query.owner;
 
   let personalPic;
   const promises = [];
 
-  getFBPics(user.id).then(pic => {
+  getFBPics(ownerId).then(pic => {
     personalPic = pic
   })
 
