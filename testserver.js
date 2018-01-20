@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const database = require('./database');
 const getFBPics = require('./getFBPics.js');
+const bodyParser = require('body-parser');
 
 
 
 app.set('port', process.env.PORT);
+app.use(bodyParser.json());
 
 app.post('/facebookID', (req, res) => {
   let friends = req.body.friends;
