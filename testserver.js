@@ -9,7 +9,7 @@ app.set('port', process.env.PORT);
 
 app.get('/facebookID', (req, res) => {
 
-  let friends = req.query.friends;
+  let friends = JSON.parse(req.query.friends);
   let deviceId = req.query.deviceId;
   let duelWins = req.query.duelWins;
   let blitzWins = req.query.blitzWins;
