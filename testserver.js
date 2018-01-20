@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 
 
-app.set('port', process.env.PORT);
+app.set('port', 3030);
 app.use(bodyParser.json());
 
 app.post('/facebookID', (req, res) => {
