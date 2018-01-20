@@ -8,13 +8,13 @@ const getFBPics = require('./getFBPics.js');
 app.set('port', process.env.PORT);
 
 app.post('/facebookID', (req, res) => {
-  let friends = req.query.friends;
-  let deviceId = req.query.deviceId;
-  let duelWins = req.query.duelWins;
-  let blitzWins = req.query.blitzWins;
-  let highscore = req.query.highscore;
-  let ownerId = req.query.owner;
-  let name = req.query.name;
+  let friends = req.body.friends;
+  let deviceId = req.body.deviceId;
+  let duelWins = req.body.duelWins;
+  let blitzWins = req.body.blitzWins;
+  let highscore = req.body.highscore;
+  let ownerId = req.body.owner;
+  let name = req.body.name;
 
   console.log(friends)
 
