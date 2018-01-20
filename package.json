@@ -1,0 +1,26 @@
+{
+  "name": "arcaderpoker-androidserver",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "testserver.js",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "express": "^4.16.2",
+    "firebase": "^4.9.0",
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalapro/arcaderpoker-androidserver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lalapro/arcaderpoker-androidserver/issues"
+  },
+  "homepage": "https://github.com/lalapro/arcaderpoker-androidserver#readme"
+}
